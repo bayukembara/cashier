@@ -1,12 +1,6 @@
 <template>
-  <v-app dark>
-    <v-navigation-drawer
-      v-model="sideDrawer"
-      :mini-variant="miniVariant"
-      :clipped="clipped"
-      fixed
-      app
-    >
+  <v-app>
+    <v-navigation-drawer v-model="sideDrawer" fixed app>
       <v-list>
         <v-list-item
           v-for="(item, i) in sideMenu"
@@ -24,9 +18,6 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-    <v-app-bar :clipped-left="clipped" fixed app>
-      <v-toolbar-title v-text="title" />
-    </v-app-bar>
 
     <v-main>
       <v-container>
@@ -63,11 +54,6 @@ export default {
       sideDrawer: false,
       sideMenu: [
         {
-          icon: 'mdi-application',
-          title: 'App',
-          to: '/',
-        },
-        {
           icon: 'mdi-account',
           title: 'Account',
           to: '/account',
@@ -84,20 +70,7 @@ export default {
           title: 'App',
           to: '/',
         },
-        {
-          icon: 'mdi-account',
-          title: 'Account',
-          to: '/account',
-        },
-        {
-          icon: 'mdi-bell',
-          title: 'Notification',
-          to: '/notification',
-        },
       ],
-      right: true,
-      rightDrawer: false,
-      title: 'Cashier',
     }
   },
 }
